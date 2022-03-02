@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="zxx">
+<head>
+	<title>Anilez</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Anilez Restaurant">
+	<meta name="keywords" content="anilez, restaurant, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="../static/img/1.ico" rel="shortcut icon"/>
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/flaticon.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
+
+
+
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Шапка -->
+	<header class="header-section">
+		<div class="header-warp">
+			<div class="site-logo">
+				<h2>Anilez</h2>
+			</div>
+			<div class="nav-switch">
+				<i class="fa fa-bars"></i>
+			</div>
+			<!-- Навигация -->
+			<ul class="main-menu">
+				<li><a href="#" class="active">Главная</a></li>
+				<li><a href="#">О ресторане</a></li>
+				<li><a href="#">Меню</a></li>
+				<li><a href="#">Наши новости</a></li>
+				<li><a href="#">Отзывы</a></li>
+				<li><a href="#">Контакты</a></li>
+			</ul>
+			<div class="header-right">
+				<p><span>Бронирование</span> <i class="fa fa-phone"></i> +7(960)0000000</p>
+			</div>
+		</div>
+	</header>
+	<!-- Конец шапки -->
+
+
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item set-bg" data-setbg="../static/img/slider/slider-1.jpg">
+				<div class="hs-content">
+					<div class="hsc-warp">
+						<h2>Вкуснейшие десерты<span>.</span></h2>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="../static/img/slider/slider-2.png">
+				<div class="hs-content">
+					<div class="hsc-warp">
+						<h2>Правильное питание<span>.</span></h2>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item set-bg" data-setbg="../static/img/slider/slider-3.jpg">
+				<div class="hs-content">
+					<div class="hsc-warp">
+						<h2>Свежие продукты<span>.</span></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+
+
+	<!-- Intro section -->
+	<section class="inter-section spad">
+		<div class="container">
+			<div class="section-title">
+				<i class="flaticon-019-rib"></i>
+				<h2>Добро пожаловать</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-4 intro-item">
+					<h3></h3>
+					<p>Предлагаем посетить наш ресторан и попробовать нашу знаменитую пиццу. Откусив кусочек, Вы чувствуете вкус свежих помидоров и приправ: базилик, орегано, майоран. А ниточки от тягучего сыра у нас самые длинные в городе.</p>
+				</div>
+				<div class="col-md-4 intro-item">
+					<h3></h3>
+					<p>В нашем меню вы сможете найти блюда без продуктов животного происхождения: фалафель, суши-роллы, боулы, бургеры.</p>
+				</div>
+				<div class="col-md-4 intro-item">
+					<h3></h3>
+					<p>Интерьер нашего заведения можно охарактеризовать словами знаменитого японского архитектора Тадао Андо, который утверждал, что свет и воздух — главные декорации пространства.</p>
+				</div>
+			</div>
+			<div class="text-center">
+				<img src="img/sign.png" alt="">
+			</div>
+		</div>
+	</section>
+	<!-- Intro section end -->
+
+
+
+
+
+
+
+	<!-- Services section -->
+	<section class="services-section spad">
+		<div class="container">
+			<div class="section-title">
+				<i class="flaticon-022-tray"></i>
+				<h2>Услуги</h2>
+			</div>
+			<div class="row services">
+				<div class="col-lg-3 col-md-6 service-item">
+					<i class="flaticon-005-coffee-1"></i>
+					<h3>Завтрак</h3>
+					<p>Завтрак – это самое любимое упражнение в утренней зарядке.</p>
+				</div>
+				<div class="col-lg-3 col-md-6 service-item">
+					<i class="flaticon-016-pancake"></i>
+					<h3>Полдник</h3>
+					<p>Хорошее блюдо можно съесть дважды.</p>
+				</div>
+				<div class="col-lg-3 col-md-6 service-item">
+					<i class="flaticon-008-soup"></i>
+					<h3>Обед</h3>
+					<p>Обед, смею вам напомнить, – важнейшее кулинарное событие дня!</p>
+				</div>
+				<div class="col-lg-3 col-md-6 service-item">
+					<i class="flaticon-032-hamburger"></i>
+					<h3>Ужин</h3>
+					<p>Человек не может хорошо думать, хорошо любить, хорошо спать, если до этого хорошо не поужинал.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Services section end -->
+
+
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<div class="footer-bg-area ">
+
+			<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </div>
+		</div>
+	</footer>
+	<!-- Footer section end -->
+
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'js/circle-progress.min.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+
+
+	<!-- load for map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo"></script>
+	<script src="{% static 'js/map.js' %}"></script>
+
+    </body>
+</html>
