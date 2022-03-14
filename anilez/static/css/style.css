@@ -811,7 +811,7 @@ ol {
 -----------------------*/
 
 .footer-bg-area {
-	background-color: #888888;
+	background-color: #ffc515;
     height: 40px;
     display: flex;
     justify-content: center;
@@ -824,7 +824,7 @@ ol {
 =================*/
 
 .page-top-info {
-	height: 678px;
+	height: 730px;
 	text-align: center;
 	display: table;
 	width: 100%;
@@ -895,31 +895,21 @@ ol {
   Menu Page
 -----------------*/
 
-.mp-menu-tab-nav {
-	border-bottom: none;
-	display: block;
-	padding-top: 2px;
-	margin-bottom: 90px;
-	overflow: hidden;
-	margin-left: -15px;
-	margin-right: -15px;
-}
-
-.mp-menu-tab-nav .nav-item {
+.nav-item {
 	display: inline-block;
-	width: 25%;
+	width: 33%;
 	margin: 0;
 	padding: 0 15px;
 	float: left;
 }
 
-.mp-menu-tab-nav .nav-item .nav-link {
+.nav-item .nav-link {
 	border: none;
 	background: #f2f8f9;
 	padding: 12px 0 10px;
 }
 
-.mp-menu-tab-nav .nav-item .nav-link i {
+.nav-item .nav-link i {
 	color: #737373;
 	float: left;
 	width: 60px;
@@ -930,29 +920,29 @@ ol {
 	top: -12px;
 }
 
-.mp-menu-tab-nav .nav-item .nav-link .mpm-text {
+.nav-item .nav-link .mpm-text {
 	padding-left: 75px;
 	padding-right: 8px;
 }
 
-.mp-menu-tab-nav .nav-item .nav-link .mpm-text p {
+.nav-item .nav-link .mpm-text p {
 	font-size: 11px;
 	margin-bottom: 0;
 	font-style: italic;
 }
 
-.mp-menu-tab-nav .nav-item .nav-link.active {
+.nav-item .nav-link.active {
 	background: #fff;
 	border: none;
 	outline: 1px solid #ffc515;
 	outline-offset: -1px;
 }
 
-.mp-menu-tab-nav .nav-item .nav-link.active h5 {
+.nav-item .nav-link.active h5 {
 	color: #ffc515;
 }
 
-.mp-menu-tab-nav .nav-item .nav-link:hover {
+.nav-item .nav-link:hover {
 	border: none;
 }
 
