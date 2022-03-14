@@ -2,7 +2,7 @@
 
 {% load static %}
 
-<html lang="zxx">
+<html lang="ru">
 <head>
 	<title>Anilez</title>
 	<meta charset="UTF-8">
@@ -43,7 +43,7 @@
 			</div>
 			<!-- Навигация -->
 			<ul class="main-menu">
-				<li><a href="#" class="active">Главная</a></li>
+				<li><a href="/" class="active">Главная</a></li>
 				<li><a href="/about/">О ресторане</a></li>
 				<li><a href="/menu/">Меню</a></li>
 				<li><a href="#">Наши новости</a></li>
@@ -57,7 +57,7 @@
 	</header>
 	<!-- Конец шапки -->
 
-
+	{% block content %}
 	<!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
@@ -85,8 +85,6 @@
 		</div>
 	</section>
 	<!-- Hero section end -->
-
-
 
 	<!-- Intro section -->
 	<section class="inter-section spad">
@@ -116,12 +114,6 @@
 	</section>
 	<!-- Intro section end -->
 
-
-
-
-
-
-
 	<!-- Services section -->
 	<section class="services-section spad">
 		<div class="container">
@@ -149,7 +141,7 @@
 		</div>
 	</section>
 	<!-- Services section end -->
-
+	{% endblock %}
 
 	<!-- Footer section -->
 	<footer class="footer-section">

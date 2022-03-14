@@ -719,29 +719,31 @@ ol {
   Menu Section
 -----------------------*/
 
-.menu-tab-nav.nav-tabs {
+.nav-tabs {
 	border-bottom: none;
 	text-align: center;
 	display: block;
 	margin-bottom: 90px;
 }
 
-.menu-tab-nav.nav-tabs .nav-item {
-	display: inline-block;
+.nav-tabs .nav-item {
+	display: flex;
+	flex-direction: column;
+    flex-wrap: wrap;
 }
 
-.menu-tab-nav.nav-tabs .nav-item .nav-link {
+.nav-tabs .nav-item .nav-link {
 	color: #fff;
 	border: none;
 }
 
-.menu-tab-nav.nav-tabs .nav-item .nav-link.active {
+.nav-tabs .nav-item .nav-link.active {
 	background-color: transparent;
 	border: none;
 	color: #ffc515;
 }
 
-.menu-tab-nav.nav-tabs .nav-item .nav-link:hover {
+.nav-tabs .nav-item .nav-link:hover {
 	border: none;
 }
 
@@ -1235,7 +1237,8 @@ ol {
 	.contact-img {
 		display: none;
 	}
-	.mp-menu-tab-nav .nav-item {
+
+	.nav-item {
 		width: 50%;
 		margin-bottom: 20px;
 	}
@@ -1329,7 +1332,7 @@ ol {
 	.contact-img {
 		display: none;
 	}
-	.mp-menu-tab-nav .nav-item {
+	.nav-item {
 		width: 50%;
 		margin-bottom: 20px;
 	}
@@ -1365,7 +1368,7 @@ ol {
 	.section-title i {
 		font-size: 50px;
 	}
-	.mp-menu-tab-nav .nav-item {
+	.nav-item {
 		width: 100%;
 		margin-bottom: 20px;
 	}
