@@ -21,7 +21,7 @@ class FoodListView(ListView):
     template_name = 'menu.html'
 
     def get_context_data(self, **kwargs):
-        context = super(FoodListView,self).get_context_data(**kwargs)
+        context = super(FoodListView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         return context
 

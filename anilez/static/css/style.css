@@ -767,8 +767,20 @@ ol {
 	border-bottom: 2px dotted #dcdcdc;
 }
 
+.menu-content{
+	height: 488px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
 .menu-item {
+	width:100%;
+	margin-top:0;
 	margin-bottom: 45px;
+	margin-right: 100px;
 }
 
 .menu-item h5 {
@@ -795,7 +807,7 @@ ol {
 	color: #fff;
 	text-align: right;
 	position: relative;
-	font-size: 17px;
+	font-size: 20px;
 }
 
 .menu-item .menu-price:after {

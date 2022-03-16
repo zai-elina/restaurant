@@ -22,9 +22,8 @@
 			</div>
 			<div class="tab-content menu-tab-content">
 				<!-- single tab content -->
-				<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
-					<div class="row menu-dark">
-						<div class="col-lg-6">
+				<div class="row menu-dark">
+						<div class=" menu-content">
 								{% for food_item in category.food.all %}
 									<div class="menu-item">
 										<h5>{{food_item.title}}</h5>
@@ -35,7 +34,6 @@
 									</div>
 								{% endfor %}
 						</div>
-					</div>
 				</div>
 				{% endfor %}
 			</div>
