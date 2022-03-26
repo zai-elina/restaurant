@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-
+{% load static %}
 {% block content %}
 
 	<!-- Page info section -->
-	<section class="page-top-info set-bg" data-setbg="../static/img/page-top-bg/1.jpg">
+	<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg' %}">
 		<div class="ptf-center">
 			<div class="container">
 				<h2>О нас<span>.</span></h2>
@@ -18,9 +18,9 @@
 	<section class="inter-section spad">
 		<div class="container">
 			<div class="section-title">
-				<i class="flaticon-019-rib"></i>
 				<h2>О нас</h2>
 			</div>
+			<div class="icon"><img src="{% static 'img/icon/restaurant.png' %}"></div>
 			<div class="row">
 				<div class="col-md-6">
 					<p></p>

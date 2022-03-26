@@ -14,15 +14,9 @@
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
 	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
-	<link rel="stylesheet" href="{% static 'css/flaticon.css' %}"/>
+<!--	<link rel="stylesheet" href="{% static 'css/flaticon.css' %}"/>-->
 	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}"/>
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
-	<link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
-
-
-
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
 
 </head>
@@ -43,10 +37,10 @@
 			</div>
 			<!-- Навигация -->
 			<ul class="main-menu">
-				<li><a href="/">Главная</a></li>
-				<li><a href="/about/">О ресторане</a></li>
-				<li><a href="/menu/">Меню</a></li>
-				<li><a href="#">Наши новости</a></li>
+				<li><a href="{% url 'base' %}">Главная</a></li>
+				<li><a href="{% url 'about' %}">О ресторане</a></li>
+				<li><a href="{% url 'menu' %}">Меню</a></li>
+				<li><a href="{% url 'news' %}">Наши новости</a></li>
 				<li><a href="#">Отзывы</a></li>
 				<li><a href="#">Контакты</a></li>
 			</ul>
@@ -61,21 +55,21 @@
 	<!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg" data-setbg="../static/img/slider/slider-1.jpg">
+			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-1.jpg' %}">
 				<div class="hs-content">
 					<div class="hsc-warp">
 						<h2>Вкуснейшие десерты<span>.</span></h2>
 					</div>
 				</div>
 			</div>
-			<div class="hs-item set-bg" data-setbg="../static/img/slider/slider-2.png">
+			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-2.png' %}">
 				<div class="hs-content">
 					<div class="hsc-warp">
 						<h2>Правильное питание<span>.</span></h2>
 					</div>
 				</div>
 			</div>
-			<div class="hs-item set-bg" data-setbg="../static/img/slider/slider-3.jpg">
+			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-3.jpg' %}">
 				<div class="hs-content">
 					<div class="hsc-warp">
 						<h2>Свежие продукты<span>.</span></h2>
@@ -90,9 +84,9 @@
 	<section class="inter-section spad">
 		<div class="container">
 			<div class="section-title">
-				<i class="flaticon-019-rib"></i>
 				<h2>Добро пожаловать</h2>
 			</div>
+			<div class="icon"><img src="{% static 'img/icon/cutlery.png' %}"></div>
 			<div class="row">
 				<div class="col-md-4 intro-item">
 					<h3></h3>
@@ -118,22 +112,21 @@
 	<section class="services-section spad">
 		<div class="container">
 			<div class="section-title">
-				<i class="flaticon-022-tray"></i>
 				<h2>Услуги</h2>
 			</div>
 			<div class="row services">
 				<div class="col-md-4 service-item">
-					<i class="flaticon-005-coffee-1"></i>
+					<div class="icon"><img src="{% static 'img/icon/coffee.png' %}"></div>
 					<h3>Завтрак</h3>
 					<p>Завтрак – это самое любимое упражнение в утренней зарядке.</p>
 				</div>
 				<div class="col-md-4 service-item">
-					<i class="flaticon-008-soup"></i>
+					<div class="icon"><img src="{% static 'img/icon/hot_soup.png' %}"></div>
 					<h3>Обед</h3>
 					<p>Обед, смею вам напомнить, – важнейшее кулинарное событие дня!</p>
 				</div>
 				<div class="col-md-4 service-item">
-					<i class="flaticon-032-hamburger"></i>
+					<div class="icon"><img src="{% static 'img/icon/dinner.png' %}"></div>
 					<h3>Ужин</h3>
 					<p>Человек не может хорошо думать, хорошо любить, хорошо спать, если до этого хорошо не поужинал.</p>
 				</div>
@@ -147,7 +140,7 @@
 	<footer class="footer-section">
 		<div class="footer-bg-area ">
 			<div class="copyright">
-				Разработан Зайнуллиной Элиной Ринтавной
+				Разработан Зайнуллиной Элиной Ринатовной
             </div>
 		</div>
 	</footer>
@@ -159,13 +152,6 @@
 	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
-	<script src="{% static 'js/circle-progress.min.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
-
-
-	<!-- load for map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo"></script>
-	<script src="{% static 'js/map.js' %}"></script>
-
     </body>
 </html>

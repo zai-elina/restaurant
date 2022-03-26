@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
-
+{% load static %}
 {% block content %}
 	<!-- Page info section -->
-	<section class="page-top-info set-bg" data-setbg="../static/img/page-top-bg/2.jpg">
+	<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/2.jpg' %}">
 		<div class="ptf-center">
 			<div class="container">
 				<h2>Меню<span>.</span></h2>
@@ -15,6 +15,7 @@
 
 	<!-- Menu section -->
 	<section class="mp-menu-section spad">
+		<div class="icon"><img src="{% static 'img/icon/menu.png' %}"></div>
 		<div class="container">
 			{% for category in categories %}
 			<div class="section-title">
