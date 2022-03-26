@@ -9,6 +9,6 @@ urlpatterns = [
     path('news/', include('news.urls')),
 ]
 
-
+# маршрут файлов media для отладочного режима
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, documtnt_root=settings.MEDIA_ROOT)
