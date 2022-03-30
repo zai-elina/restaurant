@@ -53,32 +53,62 @@
 
 	{% block content %}
 	<!-- Hero section -->
-	<section class="hero-section">
-		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-1.jpg' %}">
-				<div class="hs-content">
-					<div class="hsc-warp">
-						<h2>Вкуснейшие десерты<span>.</span></h2>
-					</div>
-				</div>
-			</div>
-			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-2.png' %}">
-				<div class="hs-content">
-					<div class="hsc-warp">
-						<h2>Правильное питание<span>.</span></h2>
-					</div>
-				</div>
-			</div>
-			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-3.jpg' %}">
-				<div class="hs-content">
-					<div class="hsc-warp">
-						<h2>Свежие продукты<span>.</span></h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<!--	<section class="hero-section">-->
+<!--		<div class="hero-slider owl-carousel">-->
+<!--			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-1.jpg' %}">-->
+<!--				<div class="hs-content">-->
+<!--					<div class="hsc-warp">-->
+<!--						<h2>Вкуснейшие десерты<span>.</span></h2>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-2.png' %}">-->
+<!--				<div class="hs-content">-->
+<!--					<div class="hsc-warp">-->
+<!--						<h2>Правильное питание<span>.</span></h2>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-3.jpg' %}">-->
+<!--				<div class="hs-content">-->
+<!--					<div class="hsc-warp">-->
+<!--						<h2>Свежие продукты<span>.</span></h2>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</section>-->
 	<!-- Hero section end -->
+	<section class="hero-section">
+		<div id="carousel" class="carousel slide carousel-fade d-inline-block" data-ride="carousel">
+        <!-- Индикаторы -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="img-fluid" src="{% static 'img/slider/slider-1.jpg' %}" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img class="img-fluid" src="{% static 'img/slider/slider-2.png' %}" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img class="img-fluid" src="{% static 'img/slider/slider-3.jpg' %}" alt="...">
+            </div>
+        </div>
+        <!-- Элементы управления -->
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Предыдущий</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Следующий</span>
+        </a>
+    </div>
+	</section>
 
 	<!-- Intro section -->
 	<section class="inter-section spad">
@@ -121,7 +151,7 @@
 					<p>Завтрак – это самое любимое упражнение в утренней зарядке.</p>
 				</div>
 				<div class="col-md-4 service-item">
-					<div class="icon"><img src="{% static 'img/icon/hot_soup.png' %}"></div>
+					<div class="icon"><img src="{% static 'img/icon/hot-soup.png' %}"></div>
 					<h3>Обед</h3>
 					<p>Обед, смею вам напомнить, – важнейшее кулинарное событие дня!</p>
 				</div>
@@ -151,7 +181,6 @@
 	<!--====== Javascripts & Jquery ======-->
 	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
     </body>
 </html>
