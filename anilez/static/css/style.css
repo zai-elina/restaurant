@@ -773,19 +773,17 @@ ol {
 }
 
 .menu-content{
-	height: 488px;
+	height: 500px;
 	display: flex;
 	flex-wrap: wrap;
-	align-content: flex-start;
 	flex-direction: column;
-	justify-content: flex-start;
 }
 
 .menu-item {
 	width:100%;
 	margin-top:0;
-	margin-bottom: 45px;
-	margin-right: 100px;
+	margin-bottom: 20px;
+	margin-right: 135px;
 }
 
 .menu-item h5 {
