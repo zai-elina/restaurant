@@ -47,7 +47,7 @@ h6 {
 }
 
 p {
-	font-size: 16px;
+	font-size: 18px;
 	color: #7e7e7e;
 	line-height: 2;
 }
@@ -649,6 +649,7 @@ ol {
 .icon{
 	text-align: center;
 	margin-top:-30px;
+	margin-bottom: 30px;
 }
 /*---------------------
   Testimonials Section
@@ -890,7 +891,7 @@ ol {
 
 .chef p {
 	font-size: 14px;
-	color: #fff;
+	color: #808080;
 	margin-bottom: 0;
 }
 
@@ -909,6 +910,11 @@ ol {
 	opacity: 1;
 }
 
+.map{
+	display: flex;
+	justify-content: center;
+	margin-top: -10px;
+}
 /*---------------
   Menu Page
 -----------------*/

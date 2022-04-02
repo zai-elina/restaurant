@@ -23,10 +23,10 @@
 			<div class="icon"><img src="{% static 'img/icon/restaurant.png' %}"></div>
 			<div class="row">
 				<div class="col-md-6">
-					<p></p>
+					<p>  Anilez - стильный европейский ресторан, где пробуют лучшие шедевры мировой гастрономии, пьют игристое и приятно проводят время, наслаждаясь уютной атмосферой и панорамой города. Днём гостей приглашают попробовать бизнес-ланч в фирменном стиле, вечером — отдохнуть с бокалом крафтового пенного или игристого под приятную музыку.</p>
 				</div>
 				<div class="col-md-6">
-					<p></p>
+					<p> В тёплую погоду открывается летняя веранда. Ресторан принимает заказы на проведение праздников и торжественных мероприятий. Приглашайте друзей, устраивайте романтический сюрприз второй половинке и просто приходите отдохнуть всей семьёй — вам здесь точно понравится.</p>
 				</div>
 			</div>
 		</div>
@@ -35,56 +35,39 @@
 
 
 	<!-- Chefs section -->
-	<section class="chefs-section set-bg" data-setbg="img/chefs-bg.jpg">
+	<section class="chefs-section set-bg">
 		<div class="container">
-			<div class="section-title text-white">
-				<i class="flaticon-006-steak"></i>
+			<div class="section-title">
 				<h2>Наши шеф-повары</h2>
 			</div>
 			<div class="row chefs">
 				<div class="col-md-4 chef">
-					<img src="img/chefs/1.jpg" alt="">
-					<h4>Chef Ted Chapman</h4>
-					<p>Integer sed facilisis eros. In iaculis rhoncus velit in malesuada. In hac habitasse platea dictumst. Fusce erat ex, consectetur sit amet.</p>
+					<img src="{% static 'img/chefs/1.jpg' %}" alt="">
+					<h4>Шеф-повар Жак Пепин</h4>
+					<p>Жак Пепин - один из самых известных американских и международно признанных шеф-поваров, телеведущих и авторов книги о приготовлении еды.</p>
 				</div>
 				<div class="col-md-4 chef">
-					<img src="img/chefs/2.jpg" alt="">
-					<h4>Chef Maria Smith</h4>
-					<p>Facilisis eros. In iaculis rhoncus velit in malesuada. In hac habitasse platea dictumst. Fusce erat ex, consectetur sit amet ornare suscipit.</p>
+					<img src="{% static 'img/chefs/2.jpg' %}" alt="">
+					<h4>Шеф-повар Поль Бокюз</h4>
+					<p>Создатель изысканных паштетов и самых простых блюд - из Франции! Легендарный Поль Бокюз – кулинар столетия. </p>
 				</div>
 				<div class="col-md-4 chef">
-					<img src="img/chefs/3.jpg" alt="">
-					<h4>Chef James Williams</h4>
-					<p>Sed facilisis eros. In iaculis rhoncus velit in malesuada. In hac habitasse platea dictumst. Fusce erat ex, con-sectetur sit amet ornare.</p>
+					<img src="{% static 'img/chefs/3.jpg' %}" alt="">
+					<h4>Шеф-повар Элен Дарроз</h4>
+					<p>Элен Дарроз - ресторатор и кулинарный консультант, телеперсона, благотворительница. Обладательница нескольких звёзд Мишлен,</p>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- Chefs section end -->
-
-
-	<!-- Brands section -->
-	<div class="brands-section">
-		<div class="container">
-			<div class="brands-slider owl-carousel">
-				<div class="bs-item">
-					<img src="img/brands/1.jpg" alt="">
-				</div>
-				<div class="bs-item">
-					<img src="img/brands/2.jpg" alt="">
-				</div>
-				<div class="bs-item">
-					<img src="img/brands/3.jpg" alt="">
-				</div>
-				<div class="bs-item">
-					<img src="img/brands/4.jpg" alt="">
-				</div>
-				<div class="bs-item">
-					<img src="img/brands/5.jpg" alt="">
-				</div>
-			</div>
+	<section>
+		<div class="section-title">
+				<h2>Месторасположение</h2>
 		</div>
-	</div>
-	<!-- Brands section end -->
+		<div class="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4485.4672712701895!2d49.110645!3d55.797863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead3dccdb30bf%3A0x8afc0369367f045f!2z0YPQuy4g0JrQsNGA0LvQsCDQnNCw0YDQutGB0LAsIDMsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L8uINCi0LDRgtCw0YDRgdGC0LDQvSwgNDIwMTEx!5e0!3m2!1sru!2sru!4v1648930413116!5m2!1sru!2sru" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			<h2> Мы всегда рады вас видеть!</h2>
+		</div>
 
+	</section>
 {% endblock content %}
