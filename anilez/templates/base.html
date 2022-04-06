@@ -11,17 +11,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link href="../static/img/1.ico" rel="shortcut icon"/>
-	<!-- Stylesheets -->
+	<!-- Стили -->
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
 	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
-<!--	<link rel="stylesheet" href="{% static 'css/flaticon.css' %}"/>-->
 	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}"/>
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
 
 
 </head>
 <body>
-	<!-- Page Preloder -->
+	<!-- Предварительный Загрузчик -->
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
@@ -52,33 +51,7 @@
 	<!-- Конец шапки -->
 
 	{% block content %}
-	<!-- Hero section -->
-<!--	<section class="hero-section">-->
-<!--		<div class="hero-slider owl-carousel">-->
-<!--			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-1.jpg' %}">-->
-<!--				<div class="hs-content">-->
-<!--					<div class="hsc-warp">-->
-<!--						<h2>Вкуснейшие десерты<span>.</span></h2>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-2.png' %}">-->
-<!--				<div class="hs-content">-->
-<!--					<div class="hsc-warp">-->
-<!--						<h2>Правильное питание<span>.</span></h2>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/slider-3.jpg' %}">-->
-<!--				<div class="hs-content">-->
-<!--					<div class="hsc-warp">-->
-<!--						<h2>Свежие продукты<span>.</span></h2>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</section>-->
-	<!-- Hero section end -->
+	<!-- Hero -->
 	<section class="hero-section">
 		<div id="carousel" class="carousel slide carousel-fade d-inline-block" data-ride="carousel">
         <!-- Индикаторы -->
@@ -109,8 +82,8 @@
         </a>
     </div>
 	</section>
+	<!-- Конец секции Hero -->
 
-	<!-- Intro section -->
 	<section class="inter-section spad">
 		<div class="container">
 			<div class="section-title">
@@ -131,18 +104,15 @@
 					<p>Интерьер нашего заведения можно охарактеризовать словами знаменитого японского архитектора Тадао Андо, который утверждал, что свет и воздух — главные декорации пространства.</p>
 				</div>
 			</div>
-			<div class="text-center">
-				<img src="../static/img/sign.png" alt="">
-			</div>
+
 		</div>
 	</section>
-	<!-- Intro section end -->
 
-	<!-- Services section -->
+
 	<section class="services-section spad">
 		<div class="container">
 			<div class="section-title">
-				<h2>Услуги</h2>
+				<h2>Мы предлагаем вам</h2>
 			</div>
 			<div class="row services">
 				<div class="col-md-4 service-item">
@@ -163,10 +133,9 @@
 			</div>
 		</div>
 	</section>
-	<!-- Services section end -->
 	{% endblock %}
 
-	<!-- Footer section -->
+	<!-- Footer -->
 	<footer class="footer-section">
 		<div class="footer-bg-area ">
 			<div class="copyright">
@@ -174,11 +143,11 @@
             </div>
 		</div>
 	</footer>
-	<!-- Footer section end -->
+	<!--  Конец Footer -->
 
 
 
-	<!--====== Javascripts & Jquery ======-->
+	<!--Скрипты-->
 	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
