@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% load static %}
+{% block content %}
+	<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/3.jpeg' %}">
+		<div class="ptf-center">
+			<div class="container">
+				<h2>Наши новости</h2>
+			</div>
+		</div>
+	</section>
+
+
+	<!--Наши новости -->
+
+
+
+{% endblock content %}
