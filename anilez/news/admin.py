@@ -3,4 +3,10 @@ from mptt.admin import MPTTModelAdmin
 
 from . import models
 
-admin.site.register(models.News)
+
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created_at', 'is_published')
+    search_fields = ('title', 'content')
+
+
+admin.site.register(models.News, NewsAdmin)

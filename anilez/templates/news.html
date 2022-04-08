@@ -12,7 +12,27 @@
 
 
 	<!--Наши новости -->
-
+	<section class="news-section spad">
+		<div class="container">
+			{% for item in news %}
+			<div class="news-item">
+					{% if item.photo %}
+						<div class="news-img">
+							<img src="{{item.photo.url}}" >
+							<div class="news-date">
+							{{ item.created_at|date:"Y-m-d H:i" }}
+							</div>
+						</div>
+					{% endif %}
+					<div class="news-content">
+						<h3>{{ item.title }}</h3>
+						<p class='card-text'>{{ item.content }}</p>
+					</div>
+			</div>
+			<hr>
+			{% endfor %}
+		</div>
+	</section>
 
 
 {% endblock content %}
