@@ -5,11 +5,7 @@ from .models import *
 
 
 def home(request):
-    return render(request, 'base.html')
-
-
-def about(request):
-    return render(request, 'about.html')
+    return render(request, 'index.html')
 
 
 def menu(request):

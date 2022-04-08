@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'mptt',
     'food.apps.FoodConfig',
     'news.apps.NewsConfig',
+    'reviews.apps.ReviewsConfig',
 ]
 
 MIDDLEWARE = [

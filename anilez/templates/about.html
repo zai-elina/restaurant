@@ -2,7 +2,6 @@
 
 {% load static %}
 {% block content %}
-
 	<!-- Page info section -->
 	<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg' %}">
 		<div class="ptf-center">
@@ -60,13 +59,43 @@
 		</div>
 	</section>
 	<!-- Chefs section end -->
+
 	<section>
-		<div class="section-title">
-				<h2>Месторасположение</h2>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-5 col-md-6 col-12 pb-4">
+					<h2>Отзывы</h2>
+					<div class="comment mt-4 text-justify float-left"> <img src="" alt="" class="rounded-circle" width="40" height="40">
+						<h4>Имя</h4> <span>Дата</span> <br>
+						<p></p>
+					</div>
+
+				</div>
+				<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+					<form action="{% url 'review' %}" method="post">
+						{% csrf_token %}  <!--токен защиты-->
+						<div class="form-group">
+							<h4>Оставьте отзыв</h4> <label for="comment">Ваш комментарий</label> <textarea name="text" id="comment" cols="30" rows="5" class="form-control"></textarea>
+						</div>
+						<div class="form-group"> <label for="contactname">Имя</label> <input name="name" id="contactname" class="form-control"> </div>
+						<div class="form-group"> <label for="contactemail">Почта</label> <input name="email" id="contactemail" class="form-control"> </div>
+						<div class="form-group" > <button  type="submit" class="btn">Отправить</button> </div>
+					</form>
+				</div>
+			</div>
 		</div>
-		<div class="map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4485.4672712701895!2d49.110645!3d55.797863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead3dccdb30bf%3A0x8afc0369367f045f!2z0YPQuy4g0JrQsNGA0LvQsCDQnNCw0YDQutGB0LAsIDMsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L8uINCi0LDRgtCw0YDRgdGC0LDQvSwgNDIwMTEx!5e0!3m2!1sru!2sru!4v1648930413116!5m2!1sru!2sru" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-			<div class="map_text"> Мы всегда рады вас видеть!</div>
+	</section>
+
+
+	<section>
+		<div class="container">
+			<div class="section-title">
+					<h2>Месторасположение</h2>
+			</div>
+			<div class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4485.4672712701895!2d49.110645!3d55.797863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead3dccdb30bf%3A0x8afc0369367f045f!2z0YPQuy4g0JrQsNGA0LvQsCDQnNCw0YDQutGB0LAsIDMsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L8uINCi0LDRgtCw0YDRgdGC0LDQvSwgNDIwMTEx!5e0!3m2!1sru!2sru!4v1648930413116!5m2!1sru!2sru" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<div class="map_text"> Мы всегда рады вас видеть!</div>
+			</div>
 		</div>
 	</section>
 {% endblock content %}
