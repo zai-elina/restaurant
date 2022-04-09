@@ -19,9 +19,6 @@
 			<div class="section-title">
 				<h2>{{category.name}}</h2>
 			</div>
-			<div class="tab-content menu-tab-content">
-				<!-- single tab content -->
-				<div class="row menu-dark">
 						<div class="menu-content">
 								{% for food_item in category.food.all %}
 									<div class="menu-item">
@@ -33,9 +30,7 @@
 									</div>
 								{% endfor %}
 						</div>
-				</div>
 				{% endfor %}
-			</div>
 		</div>
 	</section>
 

@@ -60,22 +60,27 @@
 	</section>
 	<!-- Chefs section end -->
 
-	<section>
+	<section class="page-top-info set-bg" data-setbg="{% static 'img/review-bg.jpg' %}">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-5 col-md-6 col-12 pb-4">
-					<h2>Отзывы</h2>
-					<div class="comment mt-4 text-justify float-left"> <img src="" alt="" class="rounded-circle" width="40" height="40">
-						<h4>Имя</h4> <span>Дата</span> <br>
-						<p></p>
+					<div class="review-title">Отзывы</div>
+					<div class="list-review">
+					{% for review in reviews %}
+					<div class="old-review">
+						<h4>{{review.name}}</h4>
+						<p>{{review.text}}</p>
+						<span>{{review.created_at}}</span>
 					</div>
-
+					{% endfor %}
+					</div>
 				</div>
-				<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
-					<form action="{% url 'review' %}" method="post">
+				<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12">
+					<div class="review-title">Оставьте отзыв</div>
+					<form action="{% url 'about' %}" method="post" class="form-review">
 						{% csrf_token %}  <!--токен защиты-->
 						<div class="form-group">
-							<h4>Оставьте отзыв</h4> <label for="comment">Ваш комментарий</label> <textarea name="text" id="comment" cols="30" rows="5" class="form-control"></textarea>
+							<label for="comment">Ваш комментарий</label> <textarea name="text" id="comment" cols="60" rows="7" class="form-control"></textarea>
 						</div>
 						<div class="form-group"> <label for="contactname">Имя</label> <input name="name" id="contactname" class="form-control"> </div>
 						<div class="form-group"> <label for="contactemail">Почта</label> <input name="email" id="contactemail" class="form-control"> </div>
