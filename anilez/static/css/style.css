@@ -459,12 +459,14 @@ ol {
 	flex-direction: column;
 	text-align: start;
 	flex-wrap: wrap;
+	border-radius: 10px;
 }
 
 .map{
 	display: flex;
 	justify-content: center;
 	margin-top: -10px;
+	margin-bottom: 35px;
 }
 .map_text{
 	font-size:35px;
@@ -479,7 +481,11 @@ ol {
 .section-title {
 	margin-bottom: 35px;
 }
-
+.menu-img{
+	max-width: 100px;
+	max-height: 100px;
+	border-radius: 10px;
+}
 .menu-item {
 	margin-bottom: 35px;
 }
@@ -489,7 +495,7 @@ ol {
 }
 
 .menu-content{
-	height: 500px;
+	height: 600px;
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
@@ -503,6 +509,7 @@ ol {
 }
 
 .menu-item h5 {
+	display: table-cell;
 	color: #7e7e7e;
 	margin-bottom: 8px;
 }
@@ -530,15 +537,6 @@ ol {
 	font-size: 20px;
 }
 
-.menu-item .menu-price:after {
-	position: absolute;
-	content: "";
-	width: calc(100% - 63px);
-	left: 0;
-	top: 50%;
-	margin-top: -1px;
-	border-bottom: 2px dotted #dcdcdc;
-}
 
 /*---------------
   Наши новости

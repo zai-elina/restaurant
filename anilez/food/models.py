@@ -21,6 +21,7 @@ class Category(MPTTModel):
 
 
 class Food(models.Model):
+    img = models.ImageField(upload_to='menu', blank=True)
     title = models.CharField(max_length=200)
     text = models.CharField(max_length=300)
     description = models.TextField()

@@ -70,7 +70,7 @@
 					<div class="old-review">
 						<h4 style="color:#ffc515;">{{review.name}}</h4>
 						<p>{{review.text}}</p>
-						<span>{{review.created_at}}</span>
+						<span style="text-align: right;">{{review.created_at}}</span>
 					</div>
 					{% endfor %}
 					</div>
@@ -107,7 +107,7 @@
 								  // если ошибка, то
 								  error: function (response) {
 									  // предупредим об ошибке
-									  alert(response.responseJSON.errors);
+									  alert("Ошибка ввода");
 									  console.log(response.responseJSON.errors)
 								  }
 							  });

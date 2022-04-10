@@ -22,8 +22,11 @@
 						<div class="menu-content">
 								{% for food_item in category.food.all %}
 									<div class="menu-item">
-										<h5>{{food_item.title}}</h5>
 										<div class="mi-meta">
+											{% if food_item.img %}
+											<img class="menu-img" src="{{food_item.img.url}}" >
+											{% endif %}
+											<h5>{{food_item.title}}</h5>
 											<p>{{food_item.text}}</p>
 											<div class="menu-price">{{food_item.price}}</div>
 										</div>
