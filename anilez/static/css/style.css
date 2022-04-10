@@ -437,27 +437,28 @@ ol {
 .review-title{
 	margin-top: 50px;
 	font-size: 40px;
-	color: #e0e0e0;
+	color: #ffc515;
 }
 
 .list-review {
 	width: 600px;
-	height: 550px;
+	height: 500px;
 	overflow: auto;
 }
 
 .form-review{
-	width:F450px;
+	width:450px;
 	text-align: left;
-	color: #e0e0e0;
+	color:#ffc515;
 }
 
 .old-review{
 	margin:10px;
-	background-color: #e0e0e0;
+	background-color: #ffffff;
 	display:flex;
 	flex-direction: column;
 	text-align: start;
+	flex-wrap: wrap;
 }
 
 .map{

@@ -65,10 +65,10 @@
 			<div class="row">
 				<div class="col-sm-5 col-md-6 col-12 pb-4">
 					<div class="review-title">Отзывы</div>
-					<div class="list-review">
+					<div class="list-review" id="block">
 					{% for review in reviews %}
 					<div class="old-review">
-						<h4>{{review.name}}</h4>
+						<h4 style="color:#ffc515;">{{review.name}}</h4>
 						<p>{{review.text}}</p>
 						<span>{{review.created_at}}</span>
 					</div>
@@ -77,16 +77,45 @@
 				</div>
 				<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12">
 					<div class="review-title">Оставьте отзыв</div>
-					<form action="{% url 'about' %}" method="post" class="form-review">
+					<form action="{% url 'about' %}" method="post" class="form-review" id="review">
 						{% csrf_token %}  <!--токен защиты-->
 						<div class="form-group">
 							<label for="comment">Ваш комментарий</label> <textarea name="text" id="comment" cols="60" rows="7" class="form-control"></textarea>
 						</div>
 						<div class="form-group"> <label for="contactname">Имя</label> <input name="name" id="contactname" class="form-control"> </div>
 						<div class="form-group"> <label for="contactemail">Почта</label> <input name="email" id="contactemail" class="form-control"> </div>
-						<div class="form-group" > <button  type="submit" class="btn">Отправить</button> </div>
+						<div class="form-group" > <button  type="submit" class="btn" style="background-color:#ffc515;">Отправить</button> </div>
 					</form>
 				</div>
+				{% block javascript %}
+				  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+				  <script>
+					  $(document).ready(function () {
+						  // отслеживаем событие отправки формы
+						  $('#review').submit(function () {
+							  // создаем AJAX-вызов
+							  $.ajax({
+								  data: $(this).serialize(), // получаем данные формы
+								  type: $(this).attr('method'), // GET или POST
+								  url: "{% url 'about' %}",
+								  // если успешно, то
+								  success: function (response) {
+									  alert("Спасибо за ваш отзыв ");
+									  $ ('#review')[0].reset ();
+									  $("#block").load("{% url 'about' %} #block");
+								  },
+								  // если ошибка, то
+								  error: function (response) {
+									  // предупредим об ошибке
+									  alert(response.responseJSON.errors);
+									  console.log(response.responseJSON.errors)
+								  }
+							  });
+							  return false;
+						  });
+					  })
+				  </script>
+				{% endblock javascript %}
 			</div>
 		</div>
 	</section>
