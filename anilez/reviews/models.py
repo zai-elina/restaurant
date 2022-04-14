@@ -7,5 +7,11 @@ class Reviews(models.Model):
     text = models.TextField(max_length=5000)
     created_at = models.DateTimeField(auto_now=True)
 
+
     def __str__(self):
         return self.email
+
+    class Meta:
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
+

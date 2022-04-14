@@ -562,8 +562,12 @@ ol {
 	background: #ffc515;
 	font-size:20px;
 }
-
-
+.res-form{
+	margin-left: 250px;
+}
+.btn-res{
+	background-color:#ffc515;
+}
 
 @media (min-width: 1200px) {
 	.container {

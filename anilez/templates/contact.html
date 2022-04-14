@@ -11,35 +11,91 @@
 		</div>
 </section>
 
-<section>
+<section class="reservation-section spad">
 	<div class="container">
-		<div class="section-title"><h2>Бронирование</h2></div>
-		<div class="column">
-					<form action="" method="post">
-						{% csrf_token %}
-						{% if success %}
-							<p><strong>Отправлено</strong></p>
-						{%  endif %}
-
-						<div class="form-group"> {{ form.name }} </div>
-						{% if form.name.errors %}
-							<p><strong>{{ form.name.errors }}</strong></p>
-						{%  endif %}
-
-						<div class="form-group"> {{ form.email }} </div>
-						{% if form.name.errors %}
-							<p><strong>{{ form.email.errors }}</strong></p>
-						{%  endif %}
-
-						<div class="form-group"> {{ form.phone }} </div>
-						{% if form.phone.errors %}
-							<p><strong>{{ form.phone.errors }}</strong></p>
-						{%  endif %}
-
-						<div class="form-group">{{ form.message }}</div>
-						<div class="form-group" > <button  type="submit" class="btn">Отправить</button> </div>
+				<div class="section-title" id="block">
+					<h2>Бронирование</h2>
+				</div>
+				<form action="{% url 'contact' %}" method="post" id="reservation" class="res-form">
+						{% csrf_token %}  <!--токен защиты-->
+						<div class="row">
+								<div class="col-sm-3">
+								<div class="form-group"> <label for="contactname">Имя</label>
+									<input name="name" id="contactname" class="form-control" placeholder="Ваше имя">
+								</div>
+								</div>
+								<div class="col-sm-3">
+								<div class="form-group">
+									<label for="contactemail">Почта</label>
+									<input name="email" id="contactemail" class="form-control" placeholder="Электронная почта">
+								</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<label for="contactphone">Телефон</label>
+										<input name="phone" id="contactphone" class="form-control" placeholder="Номер телефона">
+									</div>
+								</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="form-group">
+								<label for="contactcount">Количество человек</label>
+								<select name="number_of_person" class="form-control" id="contactcount">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+								</select>
+								<span class="select-arrow"></span>
+								</div>
+							</div>
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for="date">Дата</label>
+								<input type="date" name="date" id="date" class="form-control">
+							</div>
+						</div>
+							<div class="col-sm-3">
+						<div class="form-group"> <label for="time">Время</label> <input type="time" name="time" id="time" class="form-control"> </div>
+								</div>
+						</div>
+						<div class="form-group" > <button  type="submit" class="btn btn-res" >Забронировать</button> </div>
 					</form>
+
+		{% block javascript %}
+				  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+				  <script>
+					  $(document).ready(function () {
+						  // отслеживаем событие отправки формы
+						  $('#reservation').submit(function () {
+							  // создаем AJAX-вызов
+							  $.ajax({
+								  data: $(this).serialize(), // получаем данные формы
+								  type: $(this).attr('method'), // GET или POST
+								  url: "{% url 'contact' %}",
+								  // если успешно, то
+								  success: function (response) {
+									  alert("С вами свяжутся по поводу записи");
+									  $ ('#reservation')[0].reset ();
+									  $("#block").load("{% url 'contact' %} #block");
+								  },
+								  // если ошибка, то
+								  error: function (response) {
+									  // предупредим об ошибке
+									  alert("Ошибка ввода данных");
+									  console.log(response.responseJSON.errors)
+								  }
+							  });
+							  return false;
+						  });
+					  })
+				  </script>
+				{% endblock javascript %}
 		</div>
-	</div>
 </section>
 {% endblock content %}

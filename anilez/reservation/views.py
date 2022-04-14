@@ -1,15 +1,13 @@
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
-from django.views import View
+from django.shortcuts import render
 
-from .models import Reviews
-from .forms import ReviewForm
-# from .forms import ContactForm
+from .models import Reservation
+from .forms import ReservationTableForm
 
 
-def get_review(request):
+def reserve_table(request):
     if request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
-        form = ReviewForm(request.POST)
+        form = ReservationTableForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name']
             form.save()
@@ -18,8 +16,7 @@ def get_review(request):
             errors = form.errors.as_json()
             return JsonResponse({'errors': errors}, status=400)
     else:
-        form = ReviewForm()
+        form = ReservationTableForm()
     # Получение всех имен из БД.
-    reviews = Reviews.objects.all()
     # И добавляем names в контекст, чтобы получить к ним доступ в шаблоне
-    return render(request, 'about.html', {'form': form, 'reviews': reviews})
+    return render(request, 'contact.html', {'form': form})

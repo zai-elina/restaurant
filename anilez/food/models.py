@@ -19,6 +19,10 @@ class Category(MPTTModel):
     class MPTTMeta:
         order_insertion_by = ['name']
 
+    class Meta:
+        verbose_name = "Категория"
+        verbose_name_plural = "Категории"
+
 
 class Food(models.Model):
     img = models.ImageField(upload_to='menu', blank=True)
@@ -38,3 +42,7 @@ class Food(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = "Блюдо"
+        verbose_name_plural = "Блюда"
