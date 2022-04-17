@@ -9,6 +9,7 @@ urlpatterns = [
     path('news/', include('news.urls')),
     path('about/', include('reviews.urls')),
     path('contact/', include('reservation.urls')),
+    path('', include('user.urls')),
 ]
 
 # маршрут файлов media для отладочного режима

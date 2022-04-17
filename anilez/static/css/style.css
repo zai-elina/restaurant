@@ -569,6 +569,30 @@ ol {
 	background-color:#ffc515;
 }
 
+
+.register-form{
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: left;
+	color: #171a1d;
+	background-color: white;
+	 border-radius: 10px;
+}
+.reg-title{
+	text-align: center;
+	color:#ffc515;
+	font-size: 30px;
+}
+.login-form{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	color: #171a1d;
+	background-color: white;
+	border-radius: 10px;
+}
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1176px;

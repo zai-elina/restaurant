@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/5.jpg' %}">
+		<div class="ptf-center">
+			<div class="container">
+				<form action="" method="post" class="login-form" >
+					<div class="reg-title">Вход</div>
+						{% csrf_token %}  <!--токен защиты-->
+					{{ form.as_p }}
+						<div class="form-group" > <button  type="submit" class="btn btn-res" >Зайти</button> </div>
+					</form>
+			</div>
+		</div>
+	</section>
+
+{% endblock content %}

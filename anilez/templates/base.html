@@ -31,9 +31,6 @@
 			<div class="site-logo">
 				<h2>Anilez</h2>
 			</div>
-			<div class="nav-switch">
-				<i class="fa fa-bars"></i>
-			</div>
 			<!-- Навигация -->
 			<ul class="main-menu">
 				<li><a href="{% url 'index' %}">Главная</a></li>
@@ -42,9 +39,17 @@
 				<li><a href="{% url 'news' %}">Наши новости</a></li>
 				<li><a href="{% url 'contact' %}">Контакты</a></li>
 			</ul>
+			<span class="main-menu">
+				{% if request.user.is_authenticated %}
+				<a href="{% url 'logout' %}">Выход</a>
+				{% else %}
+				<a href="{% url 'register' %}">Регистрация для официантов</a> | <a href="{% url 'login' %}">Войти</a>
+				{% endif %}
+			</span>
 		</div>
 	</header>
 	<!-- Конец шапки -->
+
 
 	{% block content %}
 

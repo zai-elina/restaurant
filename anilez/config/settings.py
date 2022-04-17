@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'reviews.apps.ReviewsConfig',
     'reservation.apps.ReservationConfig',
+    'user.apps.UserConfig',
 ]
 
 MIDDLEWARE = [

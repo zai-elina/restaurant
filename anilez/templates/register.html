@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/4.jpg' %}">
+		<div class="ptf-center">
+			<div class="container">
+                <form action="" method="post" class="register-form" >
+					<div class="reg-title">Регистрация</div>
+					{% if messages %}
+					{% for message in messages %}
+					{% if message.tags == 'error' %}
+					<div class="alert alert-danger" role="alert">
+						{{ message }}
+					</div>
+					{% else %}
+					<div class="alert alert-{{ message.tags }}" role="alert">
+						{{ message }}
+					</div>
+					{% endif %}
+					{% endfor %}
+				{% endif %}
+						{% csrf_token %}  <!--токен защиты-->
+					{{ form.as_p }}
+						<div class="form-group" > <button  type="submit" class="btn btn-res" >Регистрация</button> </div>
+					</form>
+			</div>
+		</div>
+	</section>
+
+{% endblock content %}
