@@ -534,7 +534,7 @@ ol {
 	color: #7e7e7e;
 	text-align: right;
 	position: relative;
-	font-size: 20px;
+	font-size: 15px;
 }
 
 
@@ -593,6 +593,15 @@ ol {
 	background-color: white;
 	border-radius: 10px;
 }
+.waiter-menu{
+	text-align: center;
+}
+.food-item{
+	margin:10px;
+	display: inline-block;
+	width: 30%;
+}
+
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1176px;

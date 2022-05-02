@@ -30,7 +30,7 @@ def user_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('index')
+            return redirect('waiter')
     else:
         form = UserLoginForm()
     return render(request, 'login.html',  {"form": form})
@@ -39,3 +39,7 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('login')
+
+def waiter(request):
+    return render(request, 'waiter.html')
+

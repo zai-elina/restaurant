@@ -1,0 +1,37 @@
+{% extends 'waiter.html' %}
+
+{% load static %}
+{% block content %}
+	<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/2.jpeg' %}">
+		<div class="ptf-center">
+			<div class="container">
+				<h2>Меню</h2>
+			</div>
+		</div>
+	</section>
+
+
+	<!--Меню -->
+	<section class="mp-menu-section spad">
+		<div class="icon"><img src="{% static 'img/icon/menu.png' %}"></div>
+		<div class="container">
+			{% for category in categories %}
+				<div class="section-title">
+					<h2>{{category.name}}</h2>
+				</div>
+			<div class="waiter-menu">
+			{% for food_item in category.food.all %}
+				<h5 class="food-item">{{food_item.title}}</h5>
+				<div class="food-item">{{food_item.price}}</div>
+				<div class="food-item add-to-cart-btn">
+					<button class="btn btn-success">
+					Добавить в заказ
+					</button>
+				</div>
+			{% endfor %}
+			</div>
+				{% endfor %}
+			</div>
+	</section>
+
+{% endblock content %}
