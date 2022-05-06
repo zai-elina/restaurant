@@ -2,31 +2,30 @@
 
 {% load static %}
 {% block content %}
-	<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/2.jpeg' %}">
-		<div class="ptf-center">
-			<div class="container">
-				<h2>Меню</h2>
-			</div>
-		</div>
-	</section>
-
 
 	<!--Меню -->
 	<section class="mp-menu-section spad">
-		<div class="icon"><img src="{% static 'img/icon/menu.png' %}"></div>
 		<div class="container">
+			<div class="input-group rounded">
+				<form action="{% url 'search' %}" method="get">
+					<input type="text" name="s" placeholder="Поиск">
+					<input type="submit" value="Найти">
+				</form>
+			</div>
 			{% for category in categories %}
 				<div class="section-title">
 					<h2>{{category.name}}</h2>
 				</div>
 			<div class="waiter-menu">
 			{% for food_item in category.food.all %}
-				<h5 class="food-item">{{food_item.title}}</h5>
-				<div class="food-item">{{food_item.price}}</div>
-				<div class="food-item add-to-cart-btn">
-					<button class="btn btn-success">
-					Добавить в заказ
-					</button>
+				<div class="food-item">
+					<h5 class="item">{{food_item.title}}</h5>
+					<div class="item"> {{ food_item.price }} </div>
+					<div class="add-to-cart-btn">
+						<button class="btn btn-success">
+						Добавить в заказ
+						</button>
+					</div>
 				</div>
 			{% endfor %}
 			</div>

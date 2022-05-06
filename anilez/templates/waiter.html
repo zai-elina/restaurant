@@ -25,16 +25,17 @@
 	</div>
 
 	<!-- Шапка -->
-	<header class="header-section">
+	<header class="header-section" style="background: #0c5460">
 		<div class="header-warp">
 			<div class="site-logo">
 				<h2>Anilez</h2>
 			</div>
 			<!-- Навигация -->
 			<ul class="main-menu">
-				<li><a href="{% url 'waiter' %}">Список заказов</a></li>
+				<li><a href="{% url 'index' %}">Главная</a></li>
 				<li><a href="{% url 'menuwaiter' %}">Меню</a></li>
 				<li><a href="">Заказ</a></li>
+				<li><a href="{% url 'waiter' %}">Список заказов</a></li>
 				{% if request.user.is_authenticated %}
 				<li><a href="{% url 'logout' %}">Выход</a></li>
 				{% endif %}
@@ -45,12 +46,12 @@
 
 
 {% block content %}
-	<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/5.jpg' %}">
-		<div class="ptf-center">
-			<div class="container">
-			</div>
-		</div>
- 	</section>
+<!--	<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/5.jpg' %}">-->
+<!--		<div class="ptf-center">-->
+<!--			<div class="container">-->
+<!--			</div>-->
+<!--		</div>-->
+<!-- 	</section>-->
 {% endblock content %}
 	<!-- Footer -->
 	<footer class="bg-light text-center text-lg-start">
