@@ -3,11 +3,11 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from django import forms
 from django.contrib.auth import login, logout
-
+from .forms import RegistrForm
 
 def register(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = RegistrForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, "Вы успешно зарегистрировались")
@@ -15,7 +15,7 @@ def register(request):
         else:
             messages.error(request, "Ошибка регистрации")
     else:
-        form = UserCreationForm()
+        form = RegistrForm()
     return render(request, 'register.html', {"form": form})
 
 

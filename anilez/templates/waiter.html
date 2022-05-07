@@ -19,11 +19,6 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-	<!-- Предварительный Загрузчик -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
-
 	<!-- Шапка -->
 	<header class="header-section" style="background: #0c5460">
 		<div class="header-warp">
@@ -66,5 +61,19 @@
 	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
+	<script>
+		$(document).ready(function(){
+			 var body = $("body");
+			 body.fadeIn(600);
+			 $(document).on("click", "a:not([href^='#']):not([href^='tel']):not([href^='mailto'])", function(e) {
+			  e.preventDefault();
+			  $("body").fadeOut(600);
+			  var self = this;
+			  setTimeout(function () {
+			   window.location.href = $(self).attr("href");
+			  }, 600);
+	 		});
+		});
+	</script>
     </body>
 </html>

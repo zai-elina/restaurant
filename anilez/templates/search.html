@@ -7,12 +7,12 @@
 		<div class="container">
 			<a class="h3" href="{% url 'menuwaiter' %}">Всё меню</a></li>
 			<div class="input-group rounded">
-				<form action="{% url 'search' %}" method="get">
+				<form action="{% url 'search' %}" method="get" id="search">
 					<input type="text" name="s" placeholder="Поиск">
 					<input type="submit" value="Найти">
 				</form>
 			</div>
-			<div class="waiter-menu">
+			<div class="waiter-menu" id="block">
 			{% for food_item in foods %}
 				<div class="food-item">
 					<h5 class="item">{{food_item.title}}</h5>
@@ -28,7 +28,6 @@
 			{% endfor %}
 			</div>
 			</div>
-
 <!--		{% if page_obj.has_other_pages %}-->
 <!--		<div class="pagination">-->
 <!--			<div  class="nav-link">-->
