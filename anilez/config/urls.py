@@ -10,6 +10,7 @@ urlpatterns = [
     path('about/', include('reviews.urls')),
     path('contact/', include('reservation.urls')),
     path('', include('user.urls')),
+    path('', include('order_list.urls')),
 ]
 
 # маршрут файлов media для отладочного режима

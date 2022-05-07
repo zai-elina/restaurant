@@ -10,6 +10,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link href="{% static 'img/1.ico' %}" rel="shortcut icon"/>
+
+	<script type="text/javascript">
+		var user='{{ request.user }}'
+	</script>
 	<!-- Стили -->
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
 	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
@@ -29,7 +33,7 @@
 			<ul class="main-menu">
 				<li><a href="{% url 'index' %}">Главная</a></li>
 				<li><a href="{% url 'menuwaiter' %}">Меню</a></li>
-				<li><a href="">Заказ</a></li>
+				<li><a href="{% url 'order' %}">Заказ</a></li>
 				<li><a href="{% url 'waiter' %}">Список заказов</a></li>
 				{% if request.user.is_authenticated %}
 				<li><a href="{% url 'logout' %}">Выход</a></li>
@@ -60,7 +64,7 @@
 	<!--Скрипты-->
 	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/order.js' %}"></script>
 	<script>
 		$(document).ready(function(){
 			 var body = $("body");

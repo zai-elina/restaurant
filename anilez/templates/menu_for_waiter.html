@@ -22,9 +22,15 @@
 					<h5 class="item">{{food_item.title}}</h5>
 					<div class="item"> {{ food_item.price }} </div>
 					<div class="add-to-cart-btn">
-						<button class="btn btn-success">
-						Добавить в заказ
-						</button>
+						<form id="form_bying_food" class="form-inline">
+							<div class="form-group"><input type="number" class="form-control" name="number" id="number"></div>
+							<div class="form-group">
+								<button type="submit" id="submit_btn" class="btn btn-success update-order"
+								data-food="{{ food_item.id }}" data-action="add">
+							Добавить в заказ
+							</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			{% endfor %}

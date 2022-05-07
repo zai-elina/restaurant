@@ -32,6 +32,11 @@ class FoodPriceListView(ListView):
         return context
 
 def menuwaiter(request):
+
+    session_key = request.session.session_key
+    if not session_key:
+        request.session.cycle_key()
+
     return render(request, 'menu_for_waiter.html')
 
 class Search(ListView):
