@@ -60,9 +60,9 @@
 	</section>
 	<!-- Chefs section end -->
 
-	<section class="page-top-info set-bg" data-setbg="{% static 'img/review-bg.jpg' %}">
+	<section class=" set-bg" data-setbg="{% static 'img/review-bg.jpg' %}">
 		<div class="container">
-			<div class="row">
+			<div class="rew-content">
 				<div class="col-sm-5 col-md-6 col-12 pb-4">
 					<div class="review-title">Отзывы</div>
 					<div class="list-review" id="block">
@@ -75,7 +75,7 @@
 					{% endfor %}
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12">
+				<div class="col-lg-4 col-md-5 col-sm-4  col-12">
 					<div class="review-title">Оставьте отзыв</div>
 					<form action="{% url 'about' %}" method="post" class="form-review" id="review">
 						{% csrf_token %}  <!--токен защиты-->

@@ -19,18 +19,18 @@
 				<form action="{% url 'contact' %}" method="post" id="reservation" class="res-form">
 						{% csrf_token %}  <!--токен защиты-->
 						<div class="row">
-								<div class="col-sm-3">
+								<div class="col-sm-4">
 								<div class="form-group"> <label for="contactname">Имя</label>
 									<input name="name" id="contactname" class="form-control" placeholder="Ваше имя">
 								</div>
 								</div>
-								<div class="col-sm-3">
+								<div class="col-sm-4">
 								<div class="form-group">
 									<label for="contactemail">Почта</label>
 									<input name="email" id="contactemail" class="form-control" placeholder="Электронная почта">
 								</div>
 								</div>
-								<div class="col-sm-3">
+								<div class="col-sm-4">
 									<div class="form-group">
 										<label for="contactphone">Телефон</label>
 										<input name="phone" id="contactphone" class="form-control" placeholder="Номер телефона">
@@ -38,7 +38,7 @@
 								</div>
 						</div>
 						<div class="row">
-							<div class="col-sm-3">
+							<div class="col-sm-4">
 								<div class="form-group">
 								<label for="contactcount">Количество человек</label>
 								<select name="number_of_person" class="form-control" id="contactcount">
@@ -54,13 +54,13 @@
 								<span class="select-arrow"></span>
 								</div>
 							</div>
-						<div class="col-sm-3">
+						<div class="col-sm-4">
 							<div class="form-group">
 								<label for="date">Дата</label>
 								<input type="date" name="date" id="date" class="form-control">
 							</div>
 						</div>
-							<div class="col-sm-3">
+							<div class="col-sm-4">
 						<div class="form-group"> <label for="time">Время</label> <input type="time" name="time" id="time" class="form-control"> </div>
 								</div>
 						</div>
@@ -99,37 +99,24 @@
 		</div>
 </section>
 
-<!--<section>-->
-<!--		<div class="container">-->
-<!--			<div class="section-title">-->
-<!--					<h2>Напишите нам</h2>-->
-<!--			</div>-->
-<!--			<div class="text_us">-->
-<!--				<form action="" method="post" id="text_us" class="mes-form">-->
-<!--						{% csrf_token %}  &lt;!&ndash;токен защиты&ndash;&gt;-->
-<!--						<div class="row">-->
-<!--								<div class="col-sm-6">-->
-<!--								<div class="form-group"> <label for="name">Имя</label>-->
-<!--									<input name="name" id="name" class="form-control" >-->
-<!--								</div>-->
-<!--								</div>-->
-<!--								<div class="col-sm-6">-->
-<!--								<div class="form-group">-->
-<!--									<label for="email">Почта</label>-->
-<!--									<input name="email" id="email" class="form-control">-->
-<!--								</div>-->
-<!--								</div>-->
-<!--								<div class="col-sm-6">-->
-<!--								<div class="form-group">-->
-<!--									<label for="mess">Сообщение</label>-->
-<!--									{{ form.message }}-->
-<!--								</div>-->
-<!--								</div>-->
-<!--						</div>-->
-<!--						<div class="form-group" > <button  type="submit" class="btn btn-res" >Отправить</button> </div>-->
-<!--					</form>-->
+<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/6.jpg' %}">
+		<div class="container ">
+			<div class="review-title" style="text-align: center">Контактная информация</div>
+			<div class="inf">
+			<div class="row inf-item">
+			<div class="icon" style="margin: 30px;"><img src="{% static 'img/icon/maps-and-flags.png' %}"></div>
+				<div class="inf-text">ул. Карла Маркса, 3, Казань, Респ. Татарстан</div>
+			</div>
+			<div class="row inf-item">
+			<div class="icon" style="margin: 30px;"><img src="{% static 'img/icon/phone-call.png' %}"></div>
+				<div class="inf-text">+79043637342</div>
+			</div>
+			<div class="row inf-item">
+			<div class="icon" style="margin: 30px;"><img src="{% static 'img/icon/email.png' %}"></div>
+				<div class="inf-text">email@mail.ru</div>
+					</div>
+			</div>
+		</div>
+	</section>
 
-<!--			</div>-->
-<!--		</div>-->
-<!--</section>-->
 {% endblock content %}

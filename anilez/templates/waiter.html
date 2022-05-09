@@ -13,10 +13,26 @@
 
 	<script type="text/javascript">
 		var user='{{ request.user }}'
+
+		function getToken(name) {
+			let cookieValue = null;
+			if (document.cookie && document.cookie !== '') {
+				const cookies = document.cookie.split(';');
+				for (let i = 0; i < cookies.length; i++) {
+					const cookie = cookies[i].trim();
+					// Does this cookie string begin with the name we want?
+					if (cookie.substring(0, name.length + 1) === (name + '=')) {
+						cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+						break;
+					}
+				}
+			}
+			return cookieValue;
+		}
+		var csrftoken = getToken('csrftoken');
 	</script>
 	<!-- Стили -->
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
-	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +40,13 @@
 </head>
 <body>
 	<!-- Шапка -->
-	<header class="header-section" style="background: #0c5460">
+	<header class="header-section" style="background: #0c5460;">
 		<div class="header-warp">
 			<div class="site-logo">
 				<h2>Anilez</h2>
+			</div>
+			<div class="nav-switch">
+				<i class="fa fa-bars"></i>
 			</div>
 			<!-- Навигация -->
 			<ul class="main-menu">
@@ -45,16 +64,28 @@
 
 
 {% block content %}
-<!--	<section class="page-top-info set-bg" data-setbg="{% static 'img/page-top-bg/5.jpg' %}">-->
-<!--		<div class="ptf-center">-->
-<!--			<div class="container">-->
-<!--			</div>-->
-<!--		</div>-->
-<!-- 	</section>-->
+<section class="mp-menu-section spad">
+		<div class="container">
+            <div class="section-title">
+                <h2>Список заказов</h2>
+            </div>
+			<br>
+			<table class="table">
+				{% for item in order %}
+				<tr>
+					<td><h5>Блюда:<strong>{{item.date_order}}</strong></h5></td>
+					<td><h5>Итого:<strong>{{item.total_price|floatformat:2}}</strong></h5></td>
+					<td><h5>Номер столика:<strong>{{item.table}}</strong></h5></td>
+				</tr>
+				{% endfor %}
+			</table>
+			</div>
+			</div>
+	</section>
 {% endblock content %}
 	<!-- Footer -->
 	<footer class="bg-light text-center text-lg-start">
-		<div class="text-center p-3" style="background-color: #ffc515;">
+		<div class="text-center p-3" style="background-color: #ffc515 ;position: relative; margin-top: 170px;">
 			© 2022
 			<a class="text-dark">Разработан Зайнуллиной Элиной Ринатовной</a>
 		</div>
@@ -65,19 +96,5 @@
 	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script src="{% static 'js/order.js' %}"></script>
-	<script>
-		$(document).ready(function(){
-			 var body = $("body");
-			 body.fadeIn(600);
-			 $(document).on("click", "a:not([href^='#']):not([href^='tel']):not([href^='mailto'])", function(e) {
-			  e.preventDefault();
-			  $("body").fadeOut(600);
-			  var self = this;
-			  setTimeout(function () {
-			   window.location.href = $(self).attr("href");
-			  }, 600);
-	 		});
-		});
-	</script>
     </body>
 </html>

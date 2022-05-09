@@ -7,7 +7,7 @@
 		<div class="container">
 			<a class="h3" href="{% url 'menuwaiter' %}">Всё меню</a></li>
 			<div class="input-group rounded">
-				<form action="{% url 'search' %}" method="get" id="search">
+				<form action="{% url 'search' %}" method="get" id="searhing">
 					<input type="text" name="s" placeholder="Поиск">
 					<input type="submit" value="Найти">
 				</form>
@@ -18,29 +18,23 @@
 					<h5 class="item">{{food_item.title}}</h5>
 					<div class="item"> {{ food_item.price }} </div>
 					<div class="add-to-cart-btn">
-						<button class="btn btn-success">
-						Добавить в заказ
-						</button>
+						<form id="form_bying_food" class="form-inline">
+							{% csrf_token %}
+							<div class="form-group" ><input type="number" style="width: 100px;" name="number" id="number"></div>
+							<div class="form-group">
+								<button type="submit" id="submit_btn" class="btn btn-success update-order"
+								data-food="{{ food_item.id }}" data-action="add">
+							Добавить в заказ
+							</button>
+							</div>
+						</form>
 					</div>
 				</div>
 				{% empty %}
 				<p>По вашему запросу ничего не найдено</p>
+			</div>
 			{% endfor %}
-			</div>
-			</div>
-<!--		{% if page_obj.has_other_pages %}-->
-<!--		<div class="pagination">-->
-<!--			<div  class="nav-link">-->
-<!--				{% for p in page_obj.paginator.page_range %}-->
-<!--					{% if page_obj.number == p %}-->
-<!--					<span class="page-item">{{ p }}</span>-->
-<!--					{% elif p > page_obj.number|add:-3 and p <  page_obj.number|add:3 %}-->
-<!--					<a class="page-item">{{ p }}</a>-->
-<!--					{% endif %}-->
-<!--				{% endfor %}-->
-<!--			</div>-->
-<!--		</div>-->
-<!--		{% endif %}-->
+		</div>
 	</section>
 
 {% endblock content %}

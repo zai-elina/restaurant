@@ -40,6 +40,4 @@ def user_logout(request):
     logout(request)
     return redirect('login')
 
-def waiter(request):
-    return render(request, 'waiter.html')
 

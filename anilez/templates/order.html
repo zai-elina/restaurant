@@ -9,16 +9,83 @@
             <div class="section-title">
                 <h2>Заказ</h2>
             </div>
+			<br>
+			<table class="table">
+				<tr>
+					<th><h5>Блюда:<strong>{{order.get_cart_items}}</strong></h5></th>
+					<th><h5>Итого:<strong>{{order.get_cart_total|floatformat:2}}</strong></h5></th>
+					<th><div class="add-to-cart-btn">
+						<form id="form">
+							<div class="row">
+						{% csrf_token %}
+								<div class="form-group" >Столик:<input type="number" style="width: 100px;" name="table" id="table"></div>
+								<button id="form-button" class="btn btn-success" href="#">Оформить заказ</button>
+								</div>
+						</form>
+					</div></th>
+				</tr>
+			</table>
 			<div class="waiter-menu" id="block">
-			{% for item in items %}
-				<div class="food-item">
-					<h5 class="item">{{ item.food.title }}</h5>
-					<div class="item">{{ item.food.price }}</div>
-					<div class="item">{{ item.count }}</div>
-				</div>
-			{% endfor %}
+				<table class="table">
+					<tbody>
+				{% for item in items %}
+					<tr>
+					<td><h5 class="item">{{ item.food.title }}</h5></td>
+					<td><div class="item">{{ item.food.price |floatformat:2}}</div></td>
+					<td>
+						<div class="item" style="font-size: 20px;">{{ item.count }}
+							<div class="counter">
+						<img id="up" data-food="{{ item.food.id }}" data-action="add" class="count update-order" src="{% static  'img/icon/arrow-up.png' %}">
+						<img id="down" data-food="{{ item.food.id }}" data-action="remove" class="count update-order" src="{% static  'img/icon/arrow-down.png' %}"></div>
+							</div>
+					</td>
+					<td><div class="item">Общая сумма: {{ item.get_total }}</div></td>
+					</tr>
+				{% endfor %}
+					</tbody>
+					</table>
 			</div>
 			</div>
 	</section>
+<script type="text/javascript">
+	var form= document.getElementById('form')
+	var total='{{order.get_cart_total|floatformat:2}}'
 
+	form.addEventListener('submit',function(e){
+		e.preventDefault()
+		console.log('form success')
+		document.getElementById('form-button')
+	})
+
+	document.getElementById('form-button').addEventListener('click',function (e){
+		submitFormData()
+	})
+	function submitFormData() {
+		console.log("success")
+
+		var orderFormData={
+			'table': Number(form.table.value),
+			'total':total,
+		}
+
+
+		var url = '/process_order/'
+
+		fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'X-CSRFToken': csrftoken,
+			},
+			body: JSON.stringify({'form': orderFormData})
+		})
+				.then((response) => response.json())
+
+				.then((data) => {
+					console.log('data:', data);
+					window.location.href = "{% url 'waiter' %}"
+				})
+	}
+
+</script>
 {% endblock content %}
