@@ -45,6 +45,7 @@
 			<div class="site-logo">
 				<h2>Anilez</h2>
 			</div>
+
 			<div class="nav-switch">
 				<i class="fa fa-bars"></i>
 			</div>
@@ -64,7 +65,7 @@
 
 
 {% block content %}
-<section class="mp-menu-section spad">
+<section class="spad">
 		<div class="container">
             <div class="section-title">
                 <h2>Список заказов</h2>
@@ -73,7 +74,7 @@
 			<table class="table">
 				{% for item in order %}
 				<tr>
-					<td><h5>Блюда:<strong>{{item.date_order}}</strong></h5></td>
+					<td><h5>Дата:<strong>{{item.date_order}}</strong></h5></td>
 					<td><h5>Итого:<strong>{{item.total_price|floatformat:2}}</strong></h5></td>
 					<td><h5>Номер столика:<strong>{{item.table}}</strong></h5></td>
 				</tr>
@@ -81,11 +82,11 @@
 			</table>
 			</div>
 			</div>
-	</section>
+</section>
 {% endblock content %}
 	<!-- Footer -->
 	<footer class="bg-light text-center text-lg-start">
-		<div class="text-center p-3" style="background-color: #ffc515 ;position: relative; margin-top: 170px;">
+		<div class="text-center p-3" style="background-color: #ffc515 ;position: relative; margin-top: 210px;">
 			© 2022
 			<a class="text-dark">Разработан Зайнуллиной Элиной Ринатовной</a>
 		</div>
@@ -94,7 +95,9 @@
 
 	<!--Скрипты-->
 	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script src="{% static 'js/order.js' %}"></script>
+
     </body>
 </html>

@@ -17,7 +17,6 @@
 					<th><div class="add-to-cart-btn">
 						<form id="form">
 							<div class="row">
-						{% csrf_token %}
 								<div class="form-group" >Столик:<input type="number" style="width: 100px;" name="table" id="table"></div>
 								<button id="form-button" class="btn btn-success" href="#">Оформить заказ</button>
 								</div>
@@ -33,7 +32,7 @@
 					<td><h5 class="item">{{ item.food.title }}</h5></td>
 					<td><div class="item">{{ item.food.price |floatformat:2}}</div></td>
 					<td>
-						<div class="item" style="font-size: 20px;">{{ item.count }}
+						<div class="item" style="font-size: 20px;width:50px;">{{ item.count }}
 							<div class="counter">
 						<img id="up" data-food="{{ item.food.id }}" data-action="add" class="count update-order" src="{% static  'img/icon/arrow-up.png' %}">
 						<img id="down" data-food="{{ item.food.id }}" data-action="remove" class="count update-order" src="{% static  'img/icon/arrow-down.png' %}"></div>

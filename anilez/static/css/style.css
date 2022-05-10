@@ -453,11 +453,12 @@ ol {
 }
 
 .menu-content{
-	width: 100%;
+	margin:auto;
+	max-width: 700px;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: center;
 	flex-basis: 300px;
 }
 
@@ -556,7 +557,8 @@ ol {
 	border-radius: 10px;
 }
 .waiter-menu{
-	margin:20px;
+	max-width:600px;
+	margin:20px auto;
 }
 .food-item{
 	margin:10px;
@@ -739,4 +741,16 @@ ol {
 		padding-top: 10px;
 		text-align: center;
 	}
+}
+.fa {
+	background-color: white;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fa-bars:before {
+    content: "\f0c9";
 }

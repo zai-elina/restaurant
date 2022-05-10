@@ -12,7 +12,7 @@
 					<input type="submit" value="Найти">
 				</form>
 			</div>
-			<div class="waiter-menu" id="block">
+			<div class="waiter-menu" id="block" >
 			{% for food_item in foods %}
 				<div class="food-item">
 					<h5 class="item">{{food_item.title}}</h5>
@@ -20,7 +20,6 @@
 					<div class="add-to-cart-btn">
 						<form id="form_bying_food" class="form-inline">
 							{% csrf_token %}
-							<div class="form-group" ><input type="number" style="width: 100px;" name="number" id="number"></div>
 							<div class="form-group">
 								<button type="submit" id="submit_btn" class="btn btn-success update-order"
 								data-food="{{ food_item.id }}" data-action="add">

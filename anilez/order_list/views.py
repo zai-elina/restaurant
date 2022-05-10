@@ -63,7 +63,7 @@ def processOrder(request):
 
 def waiter(request):
     if request.user.is_authenticated:
-        order = Order.objects.filter(complete=True)
+        order = Order.objects.filter(complete=True,customer=request.user)
     else:
         order={'get_cart_total':0, 'get_cart_items':0}
     context={'order':order}

@@ -36,8 +36,8 @@
 				<li><a href="{% url 'news' %}">Наши новости</a></li>
 				<li><a href="{% url 'contact' %}">Контакты</a></li>
 				{% if request.user.is_authenticated %}
-					<li><a href="{% url 'logout' %}">Выход</a></li>
 					<li><a href="{% url 'waiter' %}">Создание заказов</a></li>
+					<li><a href="{% url 'logout' %}">Выход</a></li>
 				{% else %}
 				<li><a href="{% url 'register' %}">Регистрация</a> <span style="color:white;">|</span> <a href="{% url 'login' %}">Войти</a></li>
 				{% endif %}
