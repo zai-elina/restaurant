@@ -23,3 +23,5 @@ def reserve_table(request):
     now = timezone.now()
     Reservation.objects.filter(date__lt=now).delete()
     return render(request, 'contact.html', {'form': form})
+
+

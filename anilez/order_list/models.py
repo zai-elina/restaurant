@@ -3,10 +3,12 @@ from django.db import models
 
 class Order(models.Model):
     customer=models.ForeignKey(User, on_delete=models.SET_NULL,blank=True,null=True,verbose_name="Официант")
-    date_order=models.DateTimeField(auto_now=True,verbose_name="Дата заказа")
+    date_order=models.DateField(auto_now=True,verbose_name="Дата заказа")
+    time_order=models.TimeField(auto_now=True,verbose_name="Время заказа")
     complete=models.BooleanField(default=False,null=True,blank=False)
     table=models.IntegerField(default=0,verbose_name="Номер столика")
     total_price=models.DecimalField(default=0,max_digits=10,decimal_places=2)
+    status=models.CharField(max_length=30,default="готовится")
 
     def __str__(self):
         return str(self.id)

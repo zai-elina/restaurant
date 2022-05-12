@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.shortcuts import render
 from django.http import JsonResponse
 import json
@@ -5,6 +7,7 @@ import json
 from .models import *
 from django.apps import apps
 Food = apps.get_model('food', 'Food')
+
 
 def cart(request):
     if request.user.is_authenticated:
@@ -44,7 +47,6 @@ def updateItem(request):
 
 def processOrder(request):
     data = json.loads(request.body)
-    print("DATA:",request.body)
     if request.user.is_authenticated:
         customer=request.user
         order,created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -66,6 +68,7 @@ def waiter(request):
         order = Order.objects.filter(complete=True,customer=request.user)
     else:
         order={'get_cart_total':0, 'get_cart_items':0}
-    context={'order':order}
-    return render(request, 'waiter.html', context)
+    now = datetime.today().date()
+    return render(request, 'waiter.html', {'order':order,'today': now})
+
 
