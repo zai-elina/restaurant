@@ -71,7 +71,7 @@
                 <h2>Список заказов</h2>
             </div>
 			<br>
-			<table class="table" style="word-wrap:break-word">
+			<table class="table my-table">
 				{% for item in order %}
 					{% if item.date_order == today %}
 					<tr>
@@ -79,13 +79,18 @@
 						<td><h5>Время:<strong>{{item.time_order}}</strong></h5></td>
 						<td><h5>Итого:<strong>{{item.total_price|floatformat:2}}</strong></h5></td>
 						<td><h5>Номер столика:<strong>{{item.table}}</strong></h5></td>
-						<td><h5>Статус:<strong>{{item.status}}</strong></h5>
+						<td><h5>Статус:<strong>{{item.status}}</strong></h5></td>
 						<td>
-						<select name="number_of_person" >
-						<option>готовится</option>
-						<option>ожидание оплаты</option>
-						<option>оплачено</option>
-						</select><img id="up" style="width: 25px; padding-left: 5px;" src="{% static  'img/icon/edit.png' %}"> </td>
+							<form method="post" action="{% url 'status' id=item.id %}">
+								{% csrf_token %}
+								<select name="status">
+								<option >готовится</option>
+								<option >ожидание оплаты</option>
+								<option >оплачено</option>
+								</select>
+								<div class="form-group" > <button  type="submit" class="btn" style="background:#007bff;"></button> </div>
+							</form>
+						</td>
 					</tr>
 					{% endif %}
 				{% endfor %}
@@ -107,7 +112,5 @@
 	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-	<script src="{% static 'js/order.js' %}"></script>
-
     </body>
 </html>

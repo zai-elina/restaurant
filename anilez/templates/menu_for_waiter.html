@@ -23,6 +23,7 @@
 					<div class="item"> {{ food_item.price }} </div>
 					<div class="add-to-cart-btn">
 						<form id="form_bying_food" class="form-inline">
+							{% csrf_token %}
 							<div class="form-group">
 								<button type="submit" id="submit_btn" class="btn btn-success update-order"
 								data-food="{{ food_item.id }}" data-action="add">
@@ -37,5 +38,5 @@
 				{% endfor %}
 			</div>
 	</section>
-
+<script src="{% static 'js/order.js' %}"></script>
 {% endblock content %}

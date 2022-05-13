@@ -600,6 +600,12 @@ ol {
 	flex-direction: column;
 }
 
+.my-table{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1176px;

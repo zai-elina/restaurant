@@ -1,8 +1,9 @@
 from datetime import datetime
 
-from django.shortcuts import render
-from django.http import JsonResponse
+from django.shortcuts import render, redirect
+from django.http import JsonResponse, HttpResponseRedirect
 import json
+
 
 from .models import *
 from django.apps import apps
@@ -71,4 +72,9 @@ def waiter(request):
     now = datetime.today().date()
     return render(request, 'waiter.html', {'order':order,'today': now})
 
-
+def status(request,id):
+    order = Order.objects.get(pk=id)
+    if request.method == 'POST' :
+        order.status=request.POST.get('status')
+        order.save()
+    return redirect('waiter')
