@@ -11,7 +11,7 @@ class Category(MPTTModel):
         on_delete=models.SET_NULL,
         null=True,
         blank=True
-    )  # чтобы сделать подкатегории
+    )
 
     def __str__(self):
         return self.name

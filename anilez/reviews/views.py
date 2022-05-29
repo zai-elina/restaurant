@@ -21,5 +21,4 @@ def get_review(request):
         form = ReviewForm()
     # Получение всех имен из БД.
     reviews = Reviews.objects.all()
-    # И добавляем names в контекст, чтобы получить к ним доступ в шаблоне
     return render(request, 'about.html', {'form': form, 'reviews': reviews})

@@ -4,7 +4,7 @@
 
 (function($) {
 	/*------------------
-		Navigation
+		Навигация
 	--------------------*/
 	$('.nav-switch').on('click', function(event) {
 		$('.main-menu').slideToggle(400);
@@ -13,7 +13,7 @@
 
 
 	/*------------------
-		Background Set
+		Фоновое изображение
 	--------------------*/
 	$('.set-bg').each(function() {
 		var bg = $(this).data('setbg');

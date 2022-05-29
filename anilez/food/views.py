@@ -9,10 +9,6 @@ def home(request):
     return render(request, 'index.html')
 
 
-def menu(request):
-    return render(request, 'menu.html')
-
-
 class FoodListView(ListView):
     model = Food
     template_name = 'menu.html'
@@ -31,13 +27,6 @@ class FoodPriceListView(ListView):
         context['categories'] = Category.objects.all()
         return context
 
-def menuwaiter(request):
-
-    session_key = request.session.session_key
-    if not session_key:
-        request.session.cycle_key()
-
-    return render(request, 'menu_for_waiter.html')
 
 class Search(ListView):
     template_name = 'search.html'

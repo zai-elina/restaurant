@@ -6,6 +6,7 @@
 		<div class="ptf-center">
 			<div class="container">
                 <form action="" method="post" class="register-form" >
+					{% csrf_token %}  <!--токен защиты-->
 					<div class="reg-title">Регистрация</div>
 					{% if messages %}
 					{% for message in messages %}
@@ -20,7 +21,6 @@
 					{% endif %}
 					{% endfor %}
 				{% endif %}
-						{% csrf_token %}  <!--токен защиты-->
 					{{ form.as_p }}
 						<div class="form-group" > <button  type="submit" class="btn btn-res" >Регистрация</button> </div>
 					</form>
